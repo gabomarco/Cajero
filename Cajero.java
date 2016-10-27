@@ -6,7 +6,7 @@ public class Cajero {
 	public static void main (String [] args){
 
 		int opcion;
-		String respuesta = "si";
+		
 		int cantidadAuxiliar;
 
 		Scanner teclado = new Scanner(System.in);
@@ -16,8 +16,9 @@ public class Cajero {
 
 
 		System.out.println("Bienvenido al cajero Chidaspelas");
-
+		int respuesta=0;
 		do{
+
 				System.out.println("Que deseas realizar? \n 1.- Consultar Saldo \n 2.- Depositar \n 3.- Retirar ");	
 				opcion=teclado.nextInt();	
 
@@ -26,7 +27,7 @@ public class Cajero {
 				case 1:
 	            	objetoCuenta.mostrarSaldo();
 	            	System.out.println("Desea hacer algo mas?");
-	            	respuesta=teclado.nextLine();
+	            	respuesta=teclado.nextInt();
 					break;
 
 				case 2:
@@ -34,16 +35,14 @@ public class Cajero {
 					cantidadAuxiliar=teclado.nextInt();
 	           	 	objetoCuenta.depositarSaldo(cantidadAuxiliar);
 	           	 	System.out.println("Desea hacer algo mas?");
-	            	respuesta=teclado.nextLine();
+	            	respuesta=teclado.nextInt();
 					break;
 	      		
 
 	      		case 3:
-	      			System.out.println("Cuanto deseas retirar?");
-					cantidadAuxiliar=teclado.nextInt();
-	            	//objetoCuenta.retirarSaldo(cantidadAuxiliar);
+	            	objetoCuenta.retirarSaldo();
 	            	System.out.println("Desea hacer algo mas?");
-	            	respuesta=teclado.nextLine();				
+	            	respuesta=teclado.nextInt();				
 	            	break;
 
 	            default:
@@ -52,7 +51,7 @@ public class Cajero {
 
 			}
 
-		}while(respuesta.equals("si"));
+		}while(respuesta == 1);
 
 	}
 }
