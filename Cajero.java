@@ -6,7 +6,7 @@ public class Cajero {
 	public static void main (String [] args){
 
 		int opcion;
-		char respuesta = 's';
+		String respuesta = "si";
 		int cantidadAuxiliar;
 
 		Scanner teclado = new Scanner(System.in);
@@ -15,41 +15,44 @@ public class Cajero {
 
 
 
-		System.out.println("Bienvenido al cajero Chidaspelas")
-		System.out.println("Que deseas realizar? \n 1.- Consultar Saldo \n 2.- Depositar \n 3.- Retirar ")	
-		opcion=teclado.nextInt();	
+		System.out.println("Bienvenido al cajero Chidaspelas");
 
 		do{
+				System.out.println("Que deseas realizar? \n 1.- Consultar Saldo \n 2.- Depositar \n 3.- Retirar ");	
+				opcion=teclado.nextInt();	
+
+		
 			switch(opcion){
 				case 1:
 	            	objetoCuenta.mostrarSaldo();
-	            	System.out.println("Desea hacer algo mas?")
+	            	System.out.println("Desea hacer algo mas?");
 	            	respuesta=teclado.nextLine();
-				break;
+					break;
 
 				case 2:
-					System.out.println("Cuanto deseas depositar?")
+					System.out.println("Cuanto deseas depositar?");
 					cantidadAuxiliar=teclado.nextInt();
 	           	 	objetoCuenta.depositarSaldo(cantidadAuxiliar);
-	           	 	System.out.println("Desea hacer algo mas?")
+	           	 	System.out.println("Desea hacer algo mas?");
 	            	respuesta=teclado.nextLine();
-				break;
+					break;
 	      		
 
 	      		case 3:
-	      			System.out.println("Cuanto deseas retirar?")
+	      			System.out.println("Cuanto deseas retirar?");
 					cantidadAuxiliar=teclado.nextInt();
-	            	objetoCuenta.retirarSaldo(cantidadAuxiliar);
-	            	System.out.println("Desea hacer algo mas?")
-	            	respuesta=teclado.nextLine();
-				
-	            break;
+	            	//objetoCuenta.retirarSaldo(cantidadAuxiliar);
+	            	System.out.println("Desea hacer algo mas?");
+	            	respuesta=teclado.nextLine();				
+	            	break;
 
 	            default:
-				System.out.println("Porfavor selecciona una opcion valida");
+					System.out.println("Porfavor selecciona una opcion valida");
+					break;
 
 			}
-		}while(respuesta == 's');
+
+		}while(respuesta.equals("si"));
 
 	}
 }
