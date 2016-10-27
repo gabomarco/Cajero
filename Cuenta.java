@@ -6,4 +6,5 @@ public class Cuenta{
 	int cantidadDepositar;
 	int cantidadRetirar;
 
+  
 }
